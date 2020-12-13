@@ -218,13 +218,15 @@ sp_sel_exp <- paste0("Let's get started! Select a species to work with, the clic
                      " for each fish. Each column represents a different SNP locus (a long number code) and each row represents a fish.",
                      " For example, if fish <b> 3 </b> has the number '2' in column one, that means it is heterozygous at",
                      " that locus because it has 2 different alleles, one on each chromosome. One could be the nucleotide",
-                     "<b>", " A", "</b>", " and the other", "<b>","C", "</b>",". If a fish is homozygous at a locus,",
+                     "<b>", " A", "</b>", " and the other", "<b>"," C", "</b>",". If a fish is homozygous at a locus,",
                      " it will have a '1' in that column. If the identity of the locus could not be determined, it is said",
                      " to be 'missing' and is represented by a '0' or is left blank. Note that all of the",
                      " fish have been genotyped at thousands of loci (the plural of locus). This table only lets", 
                      " you see the first 25 loci because we will use other tools to summarise the data better!")
 
-filter_loci_exp <- paste0("As you saw above, not all loci have been successfully genotyped in each fish. In this step,",
+filter_loci_exp <- paste0("As you saw above, not all loci have been successfully <i> genotyped </i> in each fish. In this case,
+                          <i> genotyped </i> means that the SNP has been successfully identified as one of the four
+                          nucleotide bases (A, C, G, or T). In this step,",
                           " you will screen each locus to see how many fish have been successfully genotyped. First,",
                           " click the button 'Find Fish Missing from Loci' to perform the screening. This takes a few",
                           " seconds to compute. Only click the button ONCE! If the fish GIF in the top corner is flopping,",
@@ -271,7 +273,7 @@ shinyServer(function(input, output, session) {
     output$FST_exp <- renderText({FST_exp})
     output$sp_sel_exp <- renderText({sp_sel_exp})
     output$filter_loci_exp <- renderText({filter_loci_exp}) 
-    output$filter_fish_exp <- renderText({filter_loci_exp}) 
+    output$filter_fish_exp <- renderText({filter_fish_exp}) 
     output$filter_exp <- renderText({filter_exp})
     output$FST_plot_exp <- renderText({FST_plot_exp})
     output$FST_map_exp <- renderText({FST_map_exp})
