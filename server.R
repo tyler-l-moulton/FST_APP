@@ -193,80 +193,81 @@ plot_FST <- function(d, x_col, y_col){
     
 }
 
-FST_exp <- paste0("Determining genetic relatedness (or difference) among populations is important.",
-                  "This allows geneticists to assess diversity within  species among different sites.",
-                  " Geneticists can use this information to determine the amount of gene flow between populations",
-                  " (by migration and interbreeding). Furthermore, if there is more difference among geographically",
-                  " close populations, this may allow for increased ability to adapt to changing conditions because",
-                  " diversity is high. FST is a common measure of genetic relatedness among populations.",
-                  " FST values range from 0 (completely related) to 1 (completely unrelated).",
-                  " It is calculated by comparing percentage of heterozygous genotypes within each population between",
-                  " populations.","<br>"," Consider the gene", "<b>","<i>", " A", "</b>","</i>"," with alleles",
-                  "<b>","<i>"," A", "</b>","</i>", " and","<b>","<i>"," a","</b>","</i>",". You would compare the proportion of individuals that are",
-                  "<b>","<i>"," Aa","</b>","</i>", " between the populations. For population genetics, we use",
-                  " individual nucleotides instead of genes. If the same spot (or locus) on a chromosome can be coded",
-                  " by different nucleotides on homologous chromosomes, then it is said to be",
-                  "<i>"," polymorphic","</i>", ". Geneticists compare the heterozygosity of these Single",
-                  " Nucleotide Polymorphisms (SNPs) between populations. By doing this for many different SNPs,",
-                  " you can  calculate FST. This app will walk you through how to do this with real genetic data!",
-                  " The data are from different breeding populations of fish from sites around the Lake Mistassini area.
+FST_exp <- paste0("Determining genetic relatedness (or difference) among populations is important.
+                   This allows geneticists to assess diversity within  species among different sites.
+                   Geneticists can use this information to determine the amount of gene flow between populations
+                   (by migration and interbreeding). Furthermore, if there is more difference among geographically
+                   close populations, this may allow for increased ability to adapt to changing conditions because
+                   diversity is high. FST is a common measure of genetic relatedness among populations.
+                   FST values range from 0 (completely related) to 1 (completely unrelated).
+                   It is calculated by comparing percentage of heterozygous genotypes within each population between
+                   populations.","<br>"," Consider the gene", "<b>","<i>", " A", "</b>","</i>"," with alleles
+                  <b>","<i>"," A", "</b>","</i>", " and","<b>","<i>"," a","</b>","</i>",". You would compare the proportion of individuals that are
+                  <b>","<i>"," Aa","</b>","</i>", " between the populations. For population genetics, we use
+                   individual nucleotides instead of genes. If the same spot (or locus) on a chromosome can be coded
+                   by different nucleotides on homologous chromosomes, then it is said to be
+                  <i>"," polymorphic","</i>", ". Geneticists compare the heterozygosity of these Single
+                   Nucleotide Polymorphisms (SNPs) between populations. By doing this for many different SNPs,
+                   you can  calculate FST. This app will walk you through how to do this with real genetic data!
+                   The data are from different breeding populations of fish from sites around the Lake Mistassini area.
                    Because all of these populations in this system are known to return to their hatching site to spawn, 
-                   the terms 'population' and 'site' are used interchangeably. Have fun!" )
+                   the terms 'population' and 'site' are used interchangeably. Have fun!")
 
-sp_sel_exp <- paste0("Let's get started! Select a species to work with, the click the 'Get Data' button. This will import",
-                     " data that are publicly available from a peer-reviewed study. You can access data sets and publications",
-                     " by navigating to the 'Documentation' tab.", "<br>",
-                     " Once you import your data, you will see a table that has the number of alleles found at each locus",
-                     " for each fish. Each column represents a different SNP locus (a long number code) and each row represents a fish.",
-                     " For example, if fish <b> 3 </b> has the number '2' in column one, that means it is heterozygous at",
-                     " that locus because it has 2 different alleles, one on each chromosome. One could be the nucleotide",
-                     "<b>", " A", "</b>", " and the other", "<b>"," C", "</b>",". If a fish is homozygous at a locus,",
-                     " it will have a '1' in that column. If the identity of the locus could not be determined, it is said",
-                     " to be 'missing' and is represented by a '0' or is left blank. Note that all of the",
-                     " fish have been genotyped at thousands of loci (the plural of locus). This table only lets", 
-                     " you see the first 25 loci because we will use other tools to summarise the data better!")
+sp_sel_exp <- paste0("Let's get started! Select a species to work with, the click the 'Get Data' button. This will import
+                      data that are publicly available from a peer-reviewed study. You can access data sets and publications
+                      by navigating to the 'Documentation' tab.<br>
+                      Once you import your data, you will see a table that has the number of alleles found at each locus
+                      for each fish. Each column represents a different SNP locus (a long number code) and each row represents a fish.
+                      For example, if fish <b> 3 </b> has the number '2' in column one, that means it is heterozygous at
+                      that locus because it has 2 different alleles, one on each chromosome. One could be the nucleotide
+                     <b> A </b> and the other <b> C </b>. If a fish is homozygous at a locus,
+                      it will have a '1' in that column. If the identity of the locus could not be determined, it is said
+                      to be 'missing' and is represented by a '0' or is left blank. Note that all of the
+                      fish have been genotyped at thousands of loci (the plural of locus). This table only lets
+                      you see the first 25 loci because we will use other tools to summarise the data better!")
 
-filter_loci_exp <- paste0("As you saw above, not all loci have been successfully genotyped in each fish. In this step,",
-                          " you will screen each locus to see how many fish have been successfully genotyped. First,",
-                          " click the button 'Find Fish Missing from Loci' to perform the screening. This takes a few",
-                          " seconds to compute. Only click the button ONCE! If the fish GIF in the top corner is flopping,",
-                          " this means the data are being processed. Once the fish stops flopping, you can click",
-                          " 'Filter out loci'. The plot will show you which loci you will keep for analysis. Use the slider",
-                          " to control the acceptable minimum number of fish a locus must have been successfully genotyped for
+filter_loci_exp <- paste0("As you saw above, not all loci have been successfully genotyped in each fish. In this step,
+                           you will screen each locus to see how many fish have been successfully genotyped. First,
+                           click the button 'Find Fish Missing from Loci' to perform the screening. This takes a few
+                           seconds to compute. Only click the button ONCE! If the fish GIF in the top corner is flopping,
+                           this means the data are being processed. Once the fish stops flopping, you can click
+                           'Filter out loci'. The plot will show you which loci you will keep for analysis. Use the slider
+                           to control the acceptable minimum number of fish a locus must have been successfully genotyped for
                           in order to be included in the analysis. For example, if the tolerance is set to 2%, only loci for which 
                           genotyping has failed in  <i> less than 2% of fish </i> will be included (i.e. > 98% genotyping
-                          success for those SNP loci). The blue points on the graph indicate these loci. You can count the loci by scrolling through the data table and observing how many are
-                          'kept'. After adjusting the slider, click 'Filter out loci' again.
-                           Loci",
-                          " <br> <br> Note: The more loci that you keep, the longer the final computation will take. You want",
-                          " to keep at least 50 loci, but if you go too much over 100 loci, the computation may take several minutes.")
+                          success for those SNP loci). The blue points on the graph indicate these loci. You can count the loci by
+                          scrolling through the data table and observing how many are 'kept'. After adjusting the slider, 
+                          click 'Filter out loci' again.
+                          <br> <br> Note: The more loci that you keep, the longer the final computation will take. You want
+                           to keep at least 50 loci, but if you go too much over 100 loci, the computation may take several minutes.")
 
-filter_fish_exp <- paste0("Each fish generally hasn't been genotyped at all loci in the dataset. We want to get rid of the fish",
-                          " with the most incomplete data. Where do you think you should draw the line? Use the slider",
-                          " to adjust the number of fish kept in the analysis. Notice that the slider adjsuts the threshold",
-                          " of the successfully genotyped loci. So adjusting the slider to '10' means that you will only anlyze",
-                          " fish that have at least 90% of there loci genotyped.This doesn't affect computation as much, so", 
-                          " keep as many as you'd like! Just keep in mind that you want to use good quality fish! <br>",
-                          " Click 'Find Loci Missing from Fish' to complete the computation, then adjust the slider and",
-                          " click 'Filter out fish' to update your plot")
+filter_fish_exp <- paste0("Each fish generally hasn't been genotyped at all loci in the dataset. We want to get rid of the fish
+                           with the most incomplete data. Where do you think you should draw the line? Use the slider
+                           to adjust the number of fish kept in the analysis. Notice that the slider adjsuts the threshold
+                           of the successfully genotyped loci. So adjusting the slider to '10' means that you will only anlyze
+                           fish that have at least 90% of there loci genotyped.This doesn't affect computation as much, so
+                           keep as many as you'd like! Just keep in mind that you want to use good quality fish! <br>
+                           Click 'Find Loci Missing from Fish' to complete the computation, then adjust the slider and
+                           click 'Filter out fish' to update your plot")
 
-filter_exp <-paste0("The above steps have now identified the appropriate filters, it's time to finalize them and calculate",
-                    " FST values. Check to make sure that no more than 200 loci are included in the analysis. If there are,",
-                    " the computation will be very lengthy. <br> Make sure that you only click the filter button <b> ONCE </b>. Additional clicks will delay computation.",
-                    " Remember, if the fish in the top right corner is flopping, a computation is occurring. Don't click anything else!",
-                    " a summary table will be produced upon completion.")
+filter_exp <-paste0("The above steps have now identified the appropriate filters, it's time to finalize them and calculate
+                     FST values. Check to make sure that no more than 200 loci are included in the analysis. If there are,
+                     the computation will be very lengthy. <br> Make sure that you only click the filter button <b> ONCE </b>. 
+                     Additional clicks will delay computation.
+                     Remember, if the fish in the top right corner is flopping, a computation is occurring. Don't click anything else!
+                     a summary table will be produced upon completion.")
 
-FST_plot_exp <- paste0("This plots a color coded plot of the genetic distances among populations on the x & y axes.",
-                       " Darker purlple squares (low FST) indicate less genetic distance (more similarity) between populations.",
-                       " Brighter pink squares (high FST) indicate more genetic distance (less similarity) between populations (sites).",
-                       " Toggle which comparisons you'd like to plot by checking the appropriate boxes. You can even compare the",
-                       " same populations to each other throughout time!")
+FST_plot_exp <- paste0("This plots a color coded plot of the genetic distances among populations on the x & y axes.
+                        Darker purlple squares (low FST) indicate less genetic distance (more similarity) between populations.
+                        Brighter pink squares (high FST) indicate more genetic distance (less similarity) between populations (sites).
+                        Toggle which comparisons you'd like to plot by checking the appropriate boxes. You can even compare the
+                        same populations to each other throughout time!")
 
-FST_map_exp <- paste0("This map will show either genetic distance of populations over years (click 'Plot Genetic Distance Between Years')",
-                      " or genetic distance among populations in the same year (click 'Plot Genetic Distance Among Sites').",
-                      " Use the toggles above to control which comparisons to make. The color scheme is the same as for the FST",
-                      " grid plot above. For between years comparisons, both circle size and color represent genetic distance (larger circle = more difference).")
-
+FST_map_exp <- paste0("This map will show either genetic distance of populations over years (click 'Plot Genetic Distance Between Years')
+                       or genetic distance among populations in the same year (click 'Plot Genetic Distance Among Sites').
+                       Use the toggles above to control which comparisons to make. The color scheme is the same as for the FST
+                       grid plot above. For between years comparisons, both circle size and color represent genetic distance 
+                      (larger circle = more difference).")
 
 # Define server logic required for App
 shinyServer(function(input, output, session) {
